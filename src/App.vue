@@ -1,30 +1,36 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view />
+    <div class="wrapper">
+        <!-- main block -->
+        <main class="main">
+            <content-block></content-block>
+        </main>
+
+        <!-- footer -->
+        <the-footer></the-footer>
+    </div>
 </template>
 
+<script setup>
+import ContentBlock from './components/ContentBlock.vue'
+import TheFooter from './components/TheFooter.vue'
+</script>
+
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+.main {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
 }
 </style>
